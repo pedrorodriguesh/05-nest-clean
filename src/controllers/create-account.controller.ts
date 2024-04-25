@@ -11,12 +11,14 @@ import { ZodValidationPipe } from 'src/pipes/zod-validation.pipe'
 import { PrismaService } from 'src/prisma/prisma.service'
 import { z } from 'zod'
 
+// Zod Schema to validate data
 const createAccountBodySchema = z.object({
   name: z.string(),
   email: z.string().email(),
   password: z.string().min(6),
 })
 
+// inference type for the schema
 type CreateAccountBodySchema = z.infer<typeof createAccountBodySchema>
 
 @Controller('/accounts')
@@ -25,7 +27,8 @@ export class CreateAccountController {
 
   @Post()
   @HttpCode(201)
-  @UsePipes(new ZodValidationPipe(createAccountBodySchema))
+  @UsePipes(new ZodValidationPipe(createAccountBodySchema)) // pipes its like middleware
+  // infer the type of the body
   async handle(@Body() body: CreateAccountBodySchema) {
     const { name, email, password } = body
 
