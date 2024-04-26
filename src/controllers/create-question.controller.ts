@@ -1,9 +1,9 @@
 import { Body, Controller, Post, UseGuards, UsePipes } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
-import { CurrentUser } from 'src/auth/current-user.decorator'
-import { UserPayload } from 'src/auth/jwt.strategy'
-import { ZodValidationPipe } from 'src/pipes/zod-validation.pipe'
 import { z } from 'zod'
+import { CurrentUser } from '../auth/current-user.decorator'
+import { UserPayload } from '../auth/jwt.strategy'
+import { ZodValidationPipe } from '../pipes/zod-validation.pipe'
 import { PrismaService } from '../prisma/prisma.service'
 
 // Zod Schema to validate data

@@ -7,8 +7,8 @@ import {
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { compare } from 'bcryptjs'
-import { ZodValidationPipe } from 'src/pipes/zod-validation.pipe'
 import { z } from 'zod'
+import { ZodValidationPipe } from '../pipes/zod-validation.pipe'
 import { PrismaService } from '../prisma/prisma.service'
 
 // Zod Schema to validate data
