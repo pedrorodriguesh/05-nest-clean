@@ -9,6 +9,7 @@ describe('Create Account (E2E)', () => {
   let app: INestApplication
   let prisma: PrismaService
 
+  // Here we're running our app before all tests, we use the createTestingModule method to create a new module with the AppModule and the PrismaService and ConfigService providers.
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
@@ -22,6 +23,7 @@ describe('Create Account (E2E)', () => {
     await app.init()
   })
 
+  // Using supertest to do e2e tests with http requests.
   test('[POST] /accounts', async () => {
     const response = await request(app.getHttpServer()).post('/accounts').send({
       name: 'John Doe',
