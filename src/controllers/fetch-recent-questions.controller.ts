@@ -21,6 +21,7 @@ export class FetchRecentQuestionsController {
   constructor(private prisma: PrismaService) {}
 
   @Get()
+  // we can pass the pipe directly to the decorator param
   async handle(@Query('page', queryValidationPipe) page: PageQueryParam) {
     const perPage = 1
 
