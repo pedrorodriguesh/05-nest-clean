@@ -11,6 +11,7 @@ const tokenSchema = z.object({
 
 type TokenSchema = z.infer<typeof tokenSchema>
 
+// JwtStrategy is a class that extends the PassportStrategy class from the passport-jwt library.
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(config: ConfigService<Env, true>) {
