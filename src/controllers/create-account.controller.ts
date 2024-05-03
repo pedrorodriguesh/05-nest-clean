@@ -18,7 +18,7 @@ const createAccountBodySchema = z.object({
   password: z.string().min(6),
 })
 
-// inference type for the schema
+// inference type for the schema to pass to the pipe
 type CreateAccountBodySchema = z.infer<typeof createAccountBodySchema>
 
 @Controller('/accounts')
