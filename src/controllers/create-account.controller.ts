@@ -27,7 +27,7 @@ export class CreateAccountController {
 
   @Post()
   @HttpCode(201)
-  @UsePipes(new ZodValidationPipe(createAccountBodySchema)) // pipes its like middleware
+  @UsePipes(new ZodValidationPipe(createAccountBodySchema)) // pipes its like middlewares
   // infer the type of the body
   async handle(@Body() body: CreateAccountBodySchema) {
     const { name, email, password } = body
