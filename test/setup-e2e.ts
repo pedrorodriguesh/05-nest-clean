@@ -1,4 +1,4 @@
-// Tests e2e setup => it requires a clean database for each test suite
+// Tests e2e setup => it requires a clean database for each test suite to run, so we need to create a new schema for each test suite.
 // so in here, we generate a new database schema for each test suite, we run the migrations and then we drop the schema after the tests are done.
 
 import 'dotenv/config'
