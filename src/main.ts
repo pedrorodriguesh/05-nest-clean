@@ -6,6 +6,7 @@ import { Env } from './env'
 // Here its the start of the application.
 
 async function bootstrap() {
+  // NestFactory creates a new Nest application instance
   const app = await NestFactory.create(AppModule)
 
   // ConfigService is a global service that provides access to the environment variables
