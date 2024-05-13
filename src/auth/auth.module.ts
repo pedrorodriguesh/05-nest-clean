@@ -9,6 +9,8 @@ import { JwtStrategy } from './jwt.strategy'
 @Module({
   imports: [
     PassportModule,
+    // With JwtModule we configure the signOptions, telling it use RS256 algorithm and the private and public keys.
+    // So when we use the JwtService it takes the settings we defined here.
     JwtModule.registerAsync({
       inject: [ConfigService],
       global: true,

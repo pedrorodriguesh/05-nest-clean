@@ -49,6 +49,7 @@ export class AuthenticateController {
       throw new UnauthorizedException('User credential do not match')
     }
 
+    // here it takes in consideration the settings we defined in the AuthModule for the JwtModule.
     const acessToken = this.jwt.sign({ sub: user.id })
 
     return {
