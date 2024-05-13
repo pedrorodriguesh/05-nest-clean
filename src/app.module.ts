@@ -8,6 +8,8 @@ import { FetchRecentQuestionsController } from './controllers/fetch-recent-quest
 import { envSchema } from './env'
 import { PrismaService } from './prisma/prisma.service'
 
+// Main file of the application, here we have the Controllers and Services.
+
 // ConfigModule is a global module that provides the ConfigService
 // to access the environment variables
 @Module({
