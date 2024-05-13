@@ -8,16 +8,17 @@ export class PrismaService
   implements OnModuleInit, OnModuleDestroy
 {
   constructor() {
+    // log is a paramater from PrismaClient constructor that allows you to specify which log levels you want to see in the console.
     super({
       log: ['warn', 'error'],
     })
   }
 
   onModuleInit() {
-    return this.$disconnect()
+    return this.$connect()
   }
 
   onModuleDestroy() {
-    return this.$connect()
+    return this.$disconnect()
   }
 }
