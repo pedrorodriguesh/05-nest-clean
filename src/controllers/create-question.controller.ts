@@ -24,11 +24,10 @@ export class CreateQuestionController {
   @Post()
   async handle(
     @Body() body: CreateQuestionBody,
-    @CurrentUser() user: UserPayload,
+    @CurrentUser() user: UserPayload, // here we get the payload from request, its the content of our token.
   ) {
     const { title, content } = body
     const userId = user.sub
-
     const slug = this.convertTitleToSlug(title)
 
     await this.prisma.question.create({
@@ -36,7 +35,7 @@ export class CreateQuestionController {
         slug,
         title,
         content,
-        authorId: userId,
+        authorId: userId, // here we use the userId to associate the question with the user we got from the token.
       },
     })
   }
